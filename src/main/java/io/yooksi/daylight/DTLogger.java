@@ -1,4 +1,4 @@
-package io.yooksi.templatemod;
+package io.yooksi.daylight;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;

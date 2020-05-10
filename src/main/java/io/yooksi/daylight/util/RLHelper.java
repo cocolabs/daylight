@@ -1,6 +1,6 @@
-package io.yooksi.templatemod.util;
+package io.yooksi.daylight.util;
 
-import io.yooksi.templatemod.Daylight;
+import io.yooksi.daylight.Daylight;
 import net.minecraft.util.ResourceLocation;
 
 /**

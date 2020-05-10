@@ -1,4 +1,4 @@
-package io.yooksi.templatemod;
+package io.yooksi.daylight;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -19,8 +19,8 @@ public class Daylight {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+        // Register GuiHandler for events
+        MinecraftForge.EVENT_BUS.register(new GuiHandler());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
