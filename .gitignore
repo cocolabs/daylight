@@ -1,0 +1,35 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# logs
+logs
+*.log
+
+# windows
+Thumbs.db
+
+# texture project
+*.xcf
+*.psd
+
+# Files from Forge MDK
+forge*changelog.txt
