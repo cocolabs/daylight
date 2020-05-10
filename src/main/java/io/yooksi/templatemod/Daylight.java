@@ -1,6 +1,5 @@
 package io.yooksi.templatemod;
 
-import io.yooksi.templatemod.common.Defines;
 import io.yooksi.templatemod.core.RegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -20,11 +19,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
-@Mod(Defines.MODID)
+@Mod(Daylight.MODID)
 public class Daylight {
 
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    public static final String MODID = "daylight";
 
     public Daylight() {
 
