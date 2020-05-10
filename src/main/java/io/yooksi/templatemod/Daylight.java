@@ -15,21 +15,18 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
 @Mod(Daylight.MODID)
 public class Daylight {
 
-    // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "daylight";
 
     public Daylight() {
 
         // Initialize mod logger
-        TMLogger.init(LogManager.getLogger());
+        DTLogger.init(LogManager.getLogger());
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -49,7 +46,6 @@ public class Daylight {
     private void setup(final FMLCommonSetupEvent event) {
 
         // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
@@ -91,5 +87,6 @@ public class Daylight {
             // register a new block here
             LOGGER.info("HELLO from Register Block");
         }
+        DTLogger.info("Daytime pre-initialized");
     }
 }

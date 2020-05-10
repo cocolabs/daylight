@@ -1,6 +1,6 @@
 package io.yooksi.templatemod.util;
 
-import io.yooksi.templatemod.common.Defines;
+import io.yooksi.templatemod.Daylight;
 import net.minecraft.util.ResourceLocation;
 
 /**
@@ -16,7 +16,7 @@ public final class RLHelper {
 	 * @return {@code ResourceLocation} pointing to provided path with {@code MODID} as namespace.
 	 */
 	public static ResourceLocation getModResourceLocation(String path) {
-		return new ResourceLocation(Defines.MODID, path);
+		return new ResourceLocation(Daylight.MODID, path);
 	}
 
 	/**

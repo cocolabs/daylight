@@ -8,19 +8,19 @@ import org.jetbrains.annotations.Contract;
  * Simple Log4J wrapper to help us log messages.
  */
 @SuppressWarnings("unused")
-public final class TMLogger {
+public final class DTLogger {
 
 	private static Logger logger;
 
 	/* Make the constructor private to disable instantiation */
-	private TMLogger() {
+	private DTLogger() {
 		throw new UnsupportedOperationException();
 	}
 
 	static void init(Logger logger) {
 
-		if (TMLogger.logger == null) {
-			TMLogger.logger = logger;
+		if (DTLogger.logger == null) {
+			DTLogger.logger = logger;
 		} else {
 			logger.warn("Trying to initialize mod logger more then once");
 		}
