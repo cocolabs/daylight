@@ -1,5 +1,7 @@
 package io.yooksi.daylight;
 
+import io.yooksi.daylight.gui.GuiHandler;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -27,5 +29,12 @@ public class Daylight {
 
         // some preinit code
         DTLogger.info("Daytime pre-initialized");
+    }
+
+    /**
+     * @return {@code ResourceLocation} pointing to provided path with {@code MODID} as namespace.
+     */
+    public static ResourceLocation getLocation(String path) {
+        return new ResourceLocation(MODID, path);
     }
 }
