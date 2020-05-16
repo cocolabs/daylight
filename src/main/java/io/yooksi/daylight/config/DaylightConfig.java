@@ -1,5 +1,8 @@
 package io.yooksi.daylight.config;
 
+import io.yooksi.daylight.DTLogger;
+import io.yooksi.daylight.Daylight;
+import io.yooksi.daylight.gui.TimeCycle;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -25,12 +28,25 @@ public class DaylightConfig {
 		CLIENT = specPair.getLeft();
 	}
 
+	private static final Pattern OFFSET_PATTERN =
+			Pattern.compile("\\[\\s*(\\d+)\\s*,\\s*(\\d+)\\s*]");
 
 	@SubscribeEvent
 	public static void onModConfigEvent(final ModConfig.ModConfigEvent configEvent) {
 
 		if (configEvent.getConfig().getSpec() == CLIENT_SPEC)
 		{
+			// Declare default values in case something goes wrong
+			Dimensions guiOffset = TimeCycle.Type.DEFAULT_OFFSET;
+			Matcher match = OFFSET_PATTERN.matcher(ClientConfig.guiOffset.get());
+			if (match.find())
+			{
+				guiOffset = new Dimensions(
+						Integer.parseInt(match.group(1)),
+						Integer.parseInt(match.group(2))
+				);
+			}
+			else DTLogger.error("Malformed config value 'guiOffset'");
 		}
 	}
 }
