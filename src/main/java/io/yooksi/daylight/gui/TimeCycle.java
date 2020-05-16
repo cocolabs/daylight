@@ -48,12 +48,6 @@ public class TimeCycle extends SpriteObject {
 			this.allowedBiomes = ImmutableList.copyOf(allowedBiomes);
 		}
 
-		private TimeCycle create() {
-			return new TimeCycle(allowedBiomes.toArray(new Biome[]{}),
-					SpriteObject.Builder.create(location).withPos(DEFAULT_ALIGNMENT,
-					DEFAULT_OFFSET).withSize(DEFAULT_SIZE));
-		}
-
 		/**
 		 * @return {@code ResourceLocation} associated with this type.
 		 */
@@ -103,10 +97,11 @@ public class TimeCycle extends SpriteObject {
 		}
 		Map<Type, TimeCycle> cycles = new java.util.HashMap<>();
 		for (Type type : Type.VALUES) {
-			cycles.put(type, type.create());
+			cycles.put(type, new TimeCycle(type.allowedBiomes.toArray(new Biome[]{}),
+					SpriteObject.Builder.create(type.location).withPos(Type.DEFAULT_ALIGNMENT,
+							Type.DEFAULT_OFFSET).withSize(Type.DEFAULT_SIZE)));
 		}
-		types = java.util.Collections.unmodifiableMap(
-				new java.util.HashMap<Type, TimeCycle>(cycles));
+		types = java.util.Collections.unmodifiableMap(new java.util.HashMap<>(cycles));
 	}
 
 	/**
