@@ -21,6 +21,10 @@ archivesBaseName = project.modId
 compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility
 
+repositories {
+    mavenLocal()
+}
+
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   Snapshot are built nightly.
@@ -75,7 +79,8 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.jetbrains/annotations
     compile group: 'org.jetbrains', name: 'annotations', version: '19.0.0'
-    implementation fg.deobf("io.yooksi:cocolib:${cocoLibVersion}")
+    // For lib development through MavenLocal
+    //implementation "io.yooksi:cocolib:${cocoLibVersion}:dev"
 }
 
 // Get properties into the manifest for reading by the runtime..
