@@ -23,6 +23,7 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility
 
 repositories {
     mavenLocal()
+    maven { url 'https://jitpack.io' }
 }
 
 minecraft {
