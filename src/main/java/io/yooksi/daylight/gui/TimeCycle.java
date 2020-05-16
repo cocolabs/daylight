@@ -35,7 +35,8 @@ public class TimeCycle extends SpriteObject {
 		}),
 		SNOW("gui/time_cycle_snow.png", new Biome[] {
 				Biomes.SNOWY_BEACH, Biomes.SNOWY_MOUNTAINS, Biomes.SNOWY_TAIGA,
-				Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS, Biomes.SNOWY_TUNDRA
+				Biomes.SNOWY_TAIGA_HILLS, Biomes.SNOWY_TAIGA_MOUNTAINS,
+				Biomes.SNOWY_TUNDRA, Biomes.FROZEN_RIVER
 		});
 		/*
 		 * These static fields contain data for creating TimeCycle instances
