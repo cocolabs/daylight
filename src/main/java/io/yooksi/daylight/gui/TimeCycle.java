@@ -27,6 +27,9 @@ public class TimeCycle extends SpriteObject {
 
 	public enum Type {
 
+		PLAIN("gui/time_cycle_plains.png", new Biome[] {
+				Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS
+		}),
 		DESERT("gui/time_cycle_desert.png", new Biome[] {
 				Biomes.DESERT, Biomes.DESERT_HILLS, Biomes.DESERT_LAKES
 		}),
