@@ -1,29 +1,31 @@
 package io.yooksi.daylight.gui;
 
-import io.yooksi.cocolib.gui.Alignment;
-import io.yooksi.cocolib.gui.SpriteObject;
-import io.yooksi.cocolib.util.RLHelper;
-import io.yooksi.daylight.Daylight;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.Nullable;
 
 @Mod.EventBusSubscriber
 public class GuiHandler {
 
-	private static final TimeCycle TIME_CYCLE_DESERT = new TimeCycle(SpriteObject.Builder.create(
-			RLHelper.getTextureLocation(Daylight.MODID, "gui/time_cycle_desert.png"))
-			.withPos(Alignment.TOP_RIGHT, 5, 5).withSize(90, 32));
-
 	@SubscribeEvent
 	public void onPreRenderOverlay(RenderGameOverlayEvent.Pre event) {
 
-			World world = Minecraft.getInstance().world;
-			if (world != null)
+			@Nullable World world = Minecraft.getInstance().world;
+			@Nullable ClientPlayerEntity player = Minecraft.getInstance().player;
+
+			if (world != null && player != null)
 			{
-				TIME_CYCLE_DESERT.updateAndDraw(world);
+				Biome biome = world.getBiome(player.getPosition());
+				TimeCycle cycle = TimeCycle.getForBiome(biome);
+
+				if (cycle != null) {
+					cycle.updateAndDraw(world);
+				}
 			}
 		}
 	}

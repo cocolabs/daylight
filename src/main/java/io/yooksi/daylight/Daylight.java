@@ -1,6 +1,7 @@
 package io.yooksi.daylight;
 
 import io.yooksi.daylight.gui.GuiHandler;
+import io.yooksi.daylight.gui.TimeCycle;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +18,9 @@ public class Daylight {
 
         // Initialize mod logger
         DTLogger.init(LogManager.getLogger());
+
+        // Initialize all time cycle types
+        TimeCycle.initialize();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

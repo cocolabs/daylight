@@ -1,47 +1,108 @@
 package io.yooksi.daylight.gui;
 
+import com.google.common.collect.ImmutableList;
 import io.yooksi.cocolib.gui.Alignment;
 import io.yooksi.cocolib.gui.GuiElement;
 import io.yooksi.cocolib.gui.SpriteObject;
 import io.yooksi.cocolib.util.DayTime;
 import io.yooksi.cocolib.util.RLHelper;
+import io.yooksi.daylight.DTLogger;
 import io.yooksi.daylight.Daylight;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Map;
+
+import static io.yooksi.cocolib.gui.PlaneGeometry.*;
 
 /**
  * This class controls the visual representation of the passage of time in Minecraft,
  * through a {@code GuiElement} that changes in a slideshow manner to inform the
  * player what time of day it is with different textures for different biomes.
  */
-public class TimeCycle {
+public class TimeCycle extends SpriteObject {
 
+	public enum Type {
 
+		DESERT("gui/time_cycle_desert.png", new Biome[] {
+				Biomes.DESERT, Biomes.DESERT_HILLS, Biomes.DESERT_LAKES
+		});
+		private static final Alignment DEFAULT_ALIGNMENT = Alignment.TOP_RIGHT;
+		private static final Dimensions DEFAULT_OFFSET = new Dimensions(5, 5);
+		private static final Dimensions DEFAULT_SIZE = new Dimensions(90, 32);
 
+		private static final Type[] VALUES = Type.values();
 
+		private final ResourceLocation location;
+		private final ImmutableList<Biome> allowedBiomes;
 
+		Type(String texturePath, Biome[] allowedBiomes) {
 
-
+			location = RLHelper.getTextureLocation(Daylight.MODID, texturePath);
+			this.allowedBiomes = ImmutableList.copyOf(allowedBiomes);
 		}
 
+		private TimeCycle create() {
+			return new TimeCycle(allowedBiomes.toArray(new Biome[]{}),
+					SpriteObject.Builder.create(location).withPos(DEFAULT_ALIGNMENT,
+					DEFAULT_OFFSET).withSize(DEFAULT_SIZE));
 		}
 
+		public ResourceLocation getTextureLocation() {
+			return location;
 		}
-
-
-
-
-
 	}
 
 	private static final SpriteObject FRAME = SpriteObject.Builder.create(
 			RLHelper.getTextureLocation(Daylight.MODID, "gui/time_cycle_frame.png"))
 			.withPos(Alignment.TOP_RIGHT, 4, 4).withSize(91, 33).build();
 
-	private final SpriteObject sprite;
+	private static Map<Type, TimeCycle> types;
+
+	private final ImmutableList<Biome> biomes;
 	private long lastDayTime;
 
-	public TimeCycle(SpriteObject.Builder builder) {
-		this.sprite = builder.build();
+	/**
+	 * @param allowedBiomes array of allowed biomes for this time cycle.
+	 * @param builder data to build sprite from.
+	 *
+	 * @throws NullPointerException if any biome {@code element} is null
+	 */
+	private TimeCycle(Biome[] allowedBiomes, SpriteObject.Builder builder) {
+
+		super(builder);
+		biomes = ImmutableList.copyOf(allowedBiomes);
+	}
+
+	public static void initialize() {
+
+		if (types != null)
+		{
+			DTLogger.warn("Wanted to re-initialize time cycles, skipping...");
+			return;
+		}
+		Map<Type, TimeCycle> cycles = new java.util.HashMap<>();
+		for (Type type : Type.VALUES) {
+			cycles.put(type, type.create());
+		}
+		types = java.util.Collections.unmodifiableMap(
+				new java.util.HashMap<Type, TimeCycle>(cycles));
+	}
+
+	public static @Nullable TimeCycle getForBiome(Biome biome) {
+
+		for (Type type : Type.VALUES)
+		{
+			for (Biome allowedBiome : type.allowedBiomes)
+			{
+				if (allowedBiome == biome)
+					return types.get(type);
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -52,8 +113,8 @@ public class TimeCycle {
 	void advanceTime(World world) {
 
 		final long time = DayTime.getTimeOfDay(world);
-		final int spriteWidth = sprite.getWidth();
-		final Segment startSegment = Segment.get(time);
+		final int spriteWidth = getWidth();
+		final TimeSegment startSegment = TimeSegment.get(time);
  
 		// Calculate how much pixels UV has to be moved along X axis
 		final int pixels = (int) Math.floor((float)(
@@ -72,7 +133,7 @@ public class TimeCycle {
 			u = uvEdge - rowLength;
 			v = startSegment.getNextRow();
 		}
-		sprite.getUV().update(u, v);
+		getUV().update(u, v);
 	}
 
 	/**
@@ -93,7 +154,11 @@ public class TimeCycle {
 			lastDayTime = currentDayTime;
 		}
 		// Draw time cycle on game screen
-		GuiElement.bindAndDrawTexture(sprite);
+		GuiElement.bindAndDrawTexture(this);
 		GuiElement.bindAndDrawTexture(FRAME);
+	}
+
+	public boolean isAllowedBiome(Biome biome) {
+		return biomes.contains(biome);
 	}
 }
