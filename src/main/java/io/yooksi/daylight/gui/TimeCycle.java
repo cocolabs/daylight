@@ -55,10 +55,10 @@ public class TimeCycle extends SpriteObject {
 			return location;
 		}
 	}
-
 	private static final SpriteObject FRAME = SpriteObject.Builder.create(
 			RLHelper.getTextureLocation(Daylight.MODID, "gui/time_cycle_frame.png"))
-			.withPos(Alignment.TOP_RIGHT, 4, 4).withSize(91, 33).build();
+			.withPos(Alignment.TOP_RIGHT, Type.DEFAULT_OFFSET.getWidth() - 1,
+					Type.DEFAULT_OFFSET.getHeight() - 1).withSize(91, 33).build();
 
 	/** Contains all {@code TimeCycle} instances mapped to types. */
 	private static Map<Type, TimeCycle> types;
@@ -150,6 +150,25 @@ public class TimeCycle extends SpriteObject {
 			v = startSegment.getNextRow();
 		}
 		getUV().update(u, v);
+	}
+
+	/**
+	 * Update {@code TimeCycle} sprite alignment and offset with given arguments.
+	 *
+	 * @param alignment relative position on game screen.
+	 * @param offset offset from position relative to alignment.
+	 */
+	public static void updatePosition(Alignment alignment, Dimensions offset) {
+
+		for (Map.Entry<Type, TimeCycle> entry : types.entrySet())
+		{
+			TimeCycle cycle = entry.getValue();
+			cycle.align(alignment, offset.getWidth(), offset.getHeight());
+			cycle.updateScaledPosition(true);
+		}
+		// Don't forget to update the frame as well
+		FRAME.align(alignment, offset.getWidth() - 1, offset.getHeight() - 1);
+		FRAME.updateScaledPosition(true);
 	}
 
 	/**
