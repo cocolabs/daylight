@@ -84,6 +84,9 @@ dependencies {
 
     // https://jitpack.io/#yooksi/cocolib
     implementation "com.github.yooksi:cocoLib:${cocoLibVersion}:dev"
+
+    // https://jitpack.io/#yooksi/timelib
+    runtimeOnly "com.github.yooksi:TimeLib:${timeLibVersion}:dev"
 }
 
 // Get properties into the manifest for reading by the runtime..
