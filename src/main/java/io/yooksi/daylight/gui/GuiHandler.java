@@ -13,6 +13,9 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber
 public class GuiHandler {
 
+	private static final TimeCycle TIME_CYCLE_DESERT = new TimeCycle(SpriteObject.Builder.create(
+			RLHelper.getTextureLocation(Daylight.MODID, "gui/time_cycle_desert.png"))
+			.withPos(Alignment.TOP_RIGHT, 5, 5).withSize(90, 32));
 
 	@SubscribeEvent
 	public void onPreRenderOverlay(RenderGameOverlayEvent.Pre event) {
@@ -20,6 +23,7 @@ public class GuiHandler {
 			World world = Minecraft.getInstance().world;
 			if (world != null)
 			{
+				TIME_CYCLE_DESERT.updateAndDraw(world);
 			}
 		}
 	}
