@@ -139,6 +139,7 @@ public class TimeCycle {
 			.withPos(Alignment.TOP_RIGHT, 4, 4).withSize(91, 33).build();
 
 	private final SpriteObject sprite;
+	private long lastDayTime;
 
 	public TimeCycle(SpriteObject.Builder builder) {
 		this.sprite = builder.build();
@@ -181,9 +182,17 @@ public class TimeCycle {
 	 */
 	void updateAndDraw(World world) {
 
-		// Recalculate sprite UV mapping coordinates
-		advanceTime(world);
-
+		final long currentDayTime = world.getDayTime();
+		/*
+		 * Recalculate sprite UV mapping coordinates.
+		 * To be performance efficient, update only if
+		 * world day time has changed since last update.
+		 */
+		if (lastDayTime != currentDayTime)
+		{
+			advanceTime(world);
+			lastDayTime = currentDayTime;
+		}
 		// Draw time cycle on game screen
 		GuiElement.bindAndDrawTexture(sprite);
 		GuiElement.bindAndDrawTexture(FRAME);
