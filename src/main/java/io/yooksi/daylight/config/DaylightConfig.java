@@ -1,5 +1,6 @@
 package io.yooksi.daylight.config;
 
+import io.yooksi.cocolib.gui.Alignment;
 import io.yooksi.daylight.DTLogger;
 import io.yooksi.daylight.Daylight;
 import io.yooksi.daylight.gui.TimeCycle;
@@ -37,7 +38,16 @@ public class DaylightConfig {
 		if (configEvent.getConfig().getSpec() == CLIENT_SPEC)
 		{
 			// Declare default values in case something goes wrong
+			Alignment guiAlignment = TimeCycle.Type.DEFAULT_ALIGNMENT;
 			Dimensions guiOffset = TimeCycle.Type.DEFAULT_OFFSET;
+			try
+			{
+				String alignment = ClientConfig.guiAlignment.get();
+				guiAlignment = Enum.valueOf(Alignment.class, alignment);
+			}
+			catch (IllegalArgumentException | NullPointerException e) {
+				DTLogger.error("Malformed config value 'guiAlignment'", e);
+			}
 			Matcher match = OFFSET_PATTERN.matcher(ClientConfig.guiOffset.get());
 			if (match.find())
 			{
