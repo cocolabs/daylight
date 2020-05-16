@@ -57,6 +57,7 @@ public class DaylightConfig {
 				);
 			}
 			else DTLogger.error("Malformed config value 'guiOffset'");
+			TimeCycle.updatePosition(guiAlignment, guiOffset);
 		}
 	}
 }
