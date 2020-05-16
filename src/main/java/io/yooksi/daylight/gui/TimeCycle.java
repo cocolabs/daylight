@@ -33,9 +33,9 @@ public class TimeCycle extends SpriteObject {
 		/*
 		 * These static fields contain data for creating TimeCycle instances
 		 */
-		private static final Alignment DEFAULT_ALIGNMENT = Alignment.TOP_RIGHT;
-		private static final Dimensions DEFAULT_OFFSET = new Dimensions(5, 5);
-		private static final Dimensions DEFAULT_SIZE = new Dimensions(90, 32);
+		public static final Alignment DEFAULT_ALIGNMENT = Alignment.TOP_RIGHT;
+		public static final Dimensions DEFAULT_OFFSET = new Dimensions(5, 5);
+		public static final Dimensions DEFAULT_SIZE = new Dimensions(90, 32);
 
 		private static final Type[] VALUES = Type.values();
 
