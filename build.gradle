@@ -93,7 +93,7 @@ dependencies {
     compile "org.spongepowered:mixin:0.8.1-SNAPSHOT"
 
     // For lib development through MavenLocal
-    //implementation "io.yooksi:cocolib:${cocoLibVersion}:dev"
+//    implementation "io.yooksi:cocolib:1.15.2-0.+:dev"
 
     // https://jitpack.io/#yooksi/cocolib
     implementation "com.github.yooksi:cocoLib:${cocoLibVersion}:dev"
