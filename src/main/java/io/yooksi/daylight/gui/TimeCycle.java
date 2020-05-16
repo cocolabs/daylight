@@ -30,6 +30,9 @@ public class TimeCycle extends SpriteObject {
 		DESERT("gui/time_cycle_desert.png", new Biome[] {
 				Biomes.DESERT, Biomes.DESERT_HILLS, Biomes.DESERT_LAKES
 		});
+		/*
+		 * These static fields contain data for creating TimeCycle instances
+		 */
 		private static final Alignment DEFAULT_ALIGNMENT = Alignment.TOP_RIGHT;
 		private static final Dimensions DEFAULT_OFFSET = new Dimensions(5, 5);
 		private static final Dimensions DEFAULT_SIZE = new Dimensions(90, 32);
@@ -51,6 +54,9 @@ public class TimeCycle extends SpriteObject {
 					DEFAULT_OFFSET).withSize(DEFAULT_SIZE));
 		}
 
+		/**
+		 * @return {@code ResourceLocation} associated with this type.
+		 */
 		public ResourceLocation getTextureLocation() {
 			return location;
 		}
@@ -60,9 +66,16 @@ public class TimeCycle extends SpriteObject {
 			RLHelper.getTextureLocation(Daylight.MODID, "gui/time_cycle_frame.png"))
 			.withPos(Alignment.TOP_RIGHT, 4, 4).withSize(91, 33).build();
 
+	/** Contains all {@code TimeCycle} instances mapped to types. */
 	private static Map<Type, TimeCycle> types;
 
+	/**
+	 * Immutable list of pre-defined allowed biomes. Attempting to change this
+	 * list in any way will result in {@code UnsupportedOperationException}.
+	 */
 	private final ImmutableList<Biome> biomes;
+
+	/** Last recorded {@code dayTime} from advancing time. */
 	private long lastDayTime;
 
 	/**
@@ -77,6 +90,10 @@ public class TimeCycle extends SpriteObject {
 		biomes = ImmutableList.copyOf(allowedBiomes);
 	}
 
+	/**
+	 * Initialize all {@code TimeCycle} types in an internal map.<br>
+	 * Call this <b>only once</b> from mod initialization phase.
+	 */
 	public static void initialize() {
 
 		if (types != null)
@@ -92,6 +109,10 @@ public class TimeCycle extends SpriteObject {
 				new java.util.HashMap<Type, TimeCycle>(cycles));
 	}
 
+	/**
+	 * @return first registered {@code TimeCycle} instance that has the given biome
+	 * 		listed as an allowed biome  with the given or {@code null} if none found.
+	 */
 	public static @Nullable TimeCycle getForBiome(Biome biome) {
 
 		for (Type type : Type.VALUES)
@@ -158,6 +179,9 @@ public class TimeCycle extends SpriteObject {
 		GuiElement.bindAndDrawTexture(FRAME);
 	}
 
+	/**
+	 * @return {@code true} if the given biome is allowed for this {@code TimeCycle}.
+	 */
 	public boolean isAllowedBiome(Biome biome) {
 		return biomes.contains(biome);
 	}
