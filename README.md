@@ -1,8 +1,14 @@
 # Daylight
 
-Are you tired of guessing what time of the day it is? You don't have resources to make a clock or it's not precise enough for you? Were you ever killed by mobs seconds away from your make-shift house and dropped all your mined goods because your time estimation was slightly off?  Well, your dog days are over.
+Daylight is a Minecraft Forge mod that serves as a precise and flexible visual indicator of current game time. 
 
-Team Yoco proudly presents you our mod Daylight. Located in the upper right corner of your screen (configurable) Daylight is a precise indicator of the current time in the game. With graceful animation that displays solar and lunar changes you will always know when to come out of your man cave.
+## Motivation
 
-Daylight will make your playing experience much better knowing you don't have to think about time. It's size and frame is delicate so you will not even notice it's presence. Just joking...you will cause it's awesome! In matter of fact, it's better then wolfs...I mean clocks! All you have to do is visit Curse Forge and have fun!
+Time management continues to be a persistent problem survival players face. This problem can be addressed in two ways: periodically checking the position of the sun or crafting a clock item. Both of these solutions require continuous physical effort on behalf of players to stay informed, and the former is not possible from locations where sun remains out of visible reach.
+
+We believe this to be unneeded effort that only detracts from game experience, and this is where Daylight swoops in to save the day! Once installed Daylight will be visible in the top right corner of your screen (position is configurable) from where it will inform you on what time of day it is with seamless and graceful animation displaying solar and lunar changes. 
+
+With the power of Daylight you are guaranteed to always be one step ahead of time!
+
+
 
