@@ -22,3 +22,24 @@ credits="Thanks to Java and Forge team"
 authors="yooksi"
 # The description text for the mod (multi line!)
 description='''Helps you keep track of day time.'''
+
+[[dependencies.daylight]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31.2.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.daylight]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.daylight]]
+    modId="cocolib"
+    mandatory=true
+    versionRange="[0.1,)"
+    ordering="BEFORE"
+    side="BOTH"
