@@ -31,19 +31,24 @@ public class GuiHandler {
 	@SubscribeEvent
 	public void onPreRenderOverlay(RenderGameOverlayEvent.Pre event) {
 
-			@Nullable World world = Minecraft.getInstance().world;
-			@Nullable ClientPlayerEntity player = Minecraft.getInstance().player;
+		// Render along with ALL other other HUD elements
+		// otherwise we risk our GUI element rendering multiple times
+		if (event.getType() != RenderGameOverlayEvent.ElementType.ALL) {
+			return;
+		}
+		@Nullable World world = Minecraft.getInstance().world;
+		@Nullable ClientPlayerEntity player = Minecraft.getInstance().player;
 
-			if (world != null && player != null)
-			{
-				Biome biome = world.getBiome(player.getPosition());
-				TimeCycle cycle = TimeCycle.getForBiome(biome);
+		if (world != null && player != null)
+		{
+			Biome biome = world.getBiome(player.getPosition());
+			TimeCycle cycle = TimeCycle.getForBiome(biome);
 
-				if (cycle != null) {
-					cycle.updateAndDraw(world);
-				}
-				// Default to Plains biome for everything else
-				else Objects.requireNonNull(TimeCycle.getForBiome(Biomes.PLAINS)).updateAndDraw(world);
+			if (cycle != null) {
+				cycle.updateAndDraw(world);
 			}
+			// Default to Plains biome for everything else
+			else Objects.requireNonNull(TimeCycle.getForBiome(Biomes.PLAINS)).updateAndDraw(world);
 		}
 	}
+}
