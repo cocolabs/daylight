@@ -60,7 +60,7 @@ public class TimeCycle extends SpriteObject {
 		/*
 		 * These static fields contain data for creating TimeCycle instances
 		 */
-		public static final Alignment DEFAULT_ALIGNMENT = Alignment.TOP_RIGHT;
+		public static final Alignment DEFAULT_ALIGNMENT = Alignment.TOP_LEFT;
 		public static final Dimensions DEFAULT_OFFSET = new Dimensions(5, 5);
 		public static final Dimensions DEFAULT_SIZE = new Dimensions(90, 32);
 
