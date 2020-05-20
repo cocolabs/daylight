@@ -60,9 +60,12 @@ public class TimeCycle extends SpriteObject {
 		/*
 		 * These static fields contain data for creating TimeCycle instances
 		 */
-		public static final Alignment DEFAULT_ALIGNMENT = Alignment.TOP_RIGHT;
+		public static final Alignment DEFAULT_ALIGNMENT = Alignment.TOP_LEFT;
 		public static final Dimensions DEFAULT_OFFSET = new Dimensions(5, 5);
 		public static final Dimensions DEFAULT_SIZE = new Dimensions(90, 32);
+
+		/** Default type used when no appropriate biome found for time cycle. */
+		public static Type DEFAULT_TYPE = PLAIN;
 
 		private static final Type[] VALUES = Type.values();
 
@@ -146,6 +149,21 @@ public class TimeCycle extends SpriteObject {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * @return registered {@code TimeCycle} instance for the given type. Never returns {@code null}
+	 * 		since all types should have an associated {@code TimeCycle} instance.
+	 */
+	public static TimeCycle getForType(Type type) {
+		return types.get(type);
+	}
+
+	/**
+	 * @return default type used when no appropriate biome was found for time cycle.
+	 */
+	public static TimeCycle getDefault() {
+		return types.get(Type.DEFAULT_TYPE);
 	}
 
 	/**
