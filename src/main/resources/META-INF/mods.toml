@@ -40,6 +40,6 @@ description='''Helps you keep track of day time.'''
 [[dependencies.daylight]]
     modId="cocolib"
     mandatory=true
-    versionRange="[0.1,)"
+    versionRange="[0.2,)"
     ordering="BEFORE"
     side="BOTH"
