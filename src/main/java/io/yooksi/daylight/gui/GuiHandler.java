@@ -16,14 +16,15 @@ package io.yooksi.daylight.gui;
 import io.yooksi.daylight.Daylight;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.world.World;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 
-@Mod.EventBusSubscriber(modid = Daylight.MODID)
+@Mod.EventBusSubscriber(modid = Daylight.MODID, value = Dist.CLIENT)
 public class GuiHandler {
 
 	@SubscribeEvent
@@ -34,7 +35,7 @@ public class GuiHandler {
 		if (event.getType() != RenderGameOverlayEvent.ElementType.ALL) {
 			return;
 		}
-		@Nullable World world = Minecraft.getInstance().world;
+		@Nullable ClientWorld world = Minecraft.getInstance().world;
 		@Nullable ClientPlayerEntity player = Minecraft.getInstance().player;
 
 		if (world != null && player != null)
