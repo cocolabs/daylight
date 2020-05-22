@@ -13,27 +13,29 @@
  */
 package io.yooksi.daylight.gui;
 
+import io.yooksi.daylight.Daylight;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.world.World;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = Daylight.MODID, value = Dist.CLIENT)
 public class GuiHandler {
 
 	@SubscribeEvent
-	public void onPreRenderOverlay(RenderGameOverlayEvent.Pre event) {
+	public static void onPreRenderOverlay(RenderGameOverlayEvent.Pre event) {
 
 		// Render along with ALL other other HUD elements
 		// otherwise we risk our GUI element rendering multiple times
 		if (event.getType() != RenderGameOverlayEvent.ElementType.ALL) {
 			return;
 		}
-		@Nullable World world = Minecraft.getInstance().world;
+		@Nullable ClientWorld world = Minecraft.getInstance().world;
 		@Nullable ClientPlayerEntity player = Minecraft.getInstance().player;
 
 		if (world != null && player != null)
