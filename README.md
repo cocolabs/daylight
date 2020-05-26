@@ -22,7 +22,7 @@ Daylight is a Minecraft Forge mod that serves as a precise and flexible visual i
 
 Time management is one of many problems survival players face. Not knowing the precise time of day makes it difficult to do your daily tasks. The clock item was introduced to mitigate this problem, however its design leaves much to be desired.  This is where Daylight swoops in to save the day! 
 
-Once installed Daylight will be visible in the corner of your screen (configurable) from where it will continually inform you on what time of day it is with seamless and graceful animation.
+Once installed Daylight will be visible in the corner of your screen *(position is configurable)* from where it will continually inform you on what time of day it is with seamless and graceful animation.
 
 With the power of Daylight you are guaranteed to always be one step ahead of time!
 
@@ -32,7 +32,7 @@ With the power of Daylight you are guaranteed to always be one step ahead of tim
 - Keep track of time without having to look at the sky or craft the clock item.
 - Daytime cycle plays a seamless animation located in the corner of your screen.
 - Shows different textures for different biome types such as *plains, desert, snow etc.*
-- Fully configurable GUI position relative to spacial directions.
+- Fully configurable GUI position relative to defined orientation.
 
 ## Installation
 
@@ -40,7 +40,7 @@ With the power of Daylight you are guaranteed to always be one step ahead of tim
 
 This depends on what you want to use the mod for.
 
-- The prefered way of obtaining a production `jar` is to download it from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/daylight).
+- The **recommended** way of obtaining the mod is to download it from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/daylight).
 - Developers who want to use the mod in dev environment should read [For Developers](#for-developers) section.
 
 The mod can always be downloaded from the [releases](https://github.com/yooksi/daylight/releases) section of the repository.
