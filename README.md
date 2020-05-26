@@ -105,7 +105,7 @@ Replace `Tag` with the version, commit or branch you with to obtain.
 
 ## License
 
-This library is licensed under [General Public License v3.0](https://www.gnu.org/licenses).
+This project is licensed under [General Public License v3.0](https://www.gnu.org/licenses).
 
-Software that depends on, is built upon or derived from this library  is conditioned on making available complete source code of licensed  works and modifications, which include larger works using a licensed   work, under the same license. Copyright and license notices must be  preserved.
+Software that depends on, is built upon or derived from this project is conditioned on making available complete source code of licensed  works and modifications, which include larger works using a licensed   work, under the same license. Copyright and license notices must be  preserved.
 
