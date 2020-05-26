@@ -21,7 +21,9 @@ With the power of Daylight you are guaranteed to always be one step ahead of tim
 - Shows different textures for different biome types such as *plains, desert, snow etc.*
 - Fully configurable GUI position relative to spacial directions.
 
-## Where to get it?
+## Installation
+
+### Where to get it?
 
 This depends on what you want to use the mod for.
 
@@ -30,20 +32,18 @@ This depends on what you want to use the mod for.
 
 The mod can always be downloaded from the [releases](https://github.com/yooksi/daylight/releases) section of the repository.
 
-## Installation
+### How to install it?
 
 - Install like any other mod by placing the jar in `mods` directory.
 - Install CocoLib as instructed in [Dependencies](#dependencies) section. 
 
-
-## Dependencies
+### Dependencies
 
 Daylight depends on [CocoLib](https://www.curseforge.com/minecraft/mc-mods/cocolib) to handle technical stuff like positioning and drawing GUI elements on screen and a few other things. If you are using the Twitch desktop application CocoLib will be automatically downloaded, otherwise you will have to download it manually.
 
 Head over to [Files](https://www.curseforge.com/minecraft/mc-mods/cocolib/files) section of the CocoLib mod library page and download the **latest** version.
 
-
-## Configuration
+### Configuration
 
 Find the mod configuration file in`config/daylight-client.toml`
 
