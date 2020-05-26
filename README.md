@@ -34,6 +34,12 @@ With the power of Daylight you are guaranteed to always be one step ahead of tim
 - Shows different textures for different biome types such as *plains, desert, snow etc.*
 - Fully configurable GUI position relative to defined orientation.
 
+## Screenshots
+
+Here is a quick game time-lapse demonstrating how Daytime works:
+
+<img src="assets\demo\daylight_time_lapse.gif" align="left">
+
 ## Installation
 
 ### Where to get it?
