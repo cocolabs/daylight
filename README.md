@@ -36,8 +36,6 @@ With the power of Daylight you are guaranteed to always be one step ahead of tim
 
 ## Screenshots
 
-Here is a quick game time-lapse demonstrating how Daytime works:
-
 <p float="left">
     <img src="assets/demo/daylight_time_lapse.gif">
 </p>
