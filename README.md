@@ -112,7 +112,7 @@ Here is a list of currently available configuration options:
 
 ## For developers
 
-Use gradle to obtain the mod from [Jitpack](https://jitpack.io/#yooksi/daylight) like this:
+Use gradle to obtain the mod from [Jitpack](https://jitpack.io/#yooksi/daylight):
 
 ```groovy
 repositories {
@@ -124,13 +124,13 @@ dependencies {
 }
 ```
 
-This will resolve the desired version of the mod from Jitpack.
+This will resolve the desired version of the mod from Jitpack.  
 Replace `Tag` with the version, commit or branch you with to obtain.
 
 ### Testing
 
 - Use the `timecycle` command from [TimeLib](https://github.com/yooksi/timelib) to speed up day/night cycle.  
-  *See [commands](https://github.com/yooksi/timelib#commands) section of TimeLib documentation for more information.*
+- See [commands](https://github.com/yooksi/timelib#commands) section of TimeLib documentation for more information.
 
 ## License
 
