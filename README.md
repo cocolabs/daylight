@@ -69,6 +69,8 @@ Here is a quick game time-lapse demonstrating how Daytime works:
         <img src="assets/screenshots/mining.png" width="145" height="82">
     </a>
 </p>
+
+
 ## Installation
 
 ### Where to get it?
