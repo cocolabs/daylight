@@ -42,30 +42,30 @@ Here is a quick game time-lapse demonstrating how Daytime works:
     <img src="assets/demo/daylight_time_lapse.gif">
 </p>
 <p float="left">
-    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/sunrise.png">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/sunrise.png" target="_blank">
         <img src="assets/screenshots/sunrise.png" width="150" height="84">
     </a>
-    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/noon.png">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/noon.png" target="_blank">
         <img src="assets/screenshots/noon.png" width="150" height="84">
     </a>
-    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/day_1.png">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/day_1.png" target="_blank">
         <img src="assets/screenshots/day_1.png" width="150" height="84">
     </a>
-    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/day_2.png">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/day_2.png" target="_blank">
         <img src="assets/screenshots/day_2.png" width="150" height="84">
     </a>
 </p>
 <p float="left">
-    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/sunset.png">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/sunset.png" target="_blank">
         <img src="assets/screenshots/sunset.png" width="150" height="84">
     </a>
-    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/midnight.png">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/midnight.png" target="_blank">
         <img src="assets/screenshots/midnight.png" width="150" height="84">
     </a>
-    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/night.png">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/night.png" target="_blank">
         <img src="assets/screenshots/night.png" width="150" height="84">
     </a>
-    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/mining.png">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/mining.png" target="_blank">
         <img src="assets/screenshots/mining.png" width="150" height="84">
     </a>
 </p>
