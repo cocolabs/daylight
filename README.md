@@ -38,8 +38,37 @@ With the power of Daylight you are guaranteed to always be one step ahead of tim
 
 Here is a quick game time-lapse demonstrating how Daytime works:
 
-<img src="assets/demo/daylight_time_lapse.gif">
-
+<p float="left">
+    <img src="assets/demo/daylight_time_lapse.gif">
+</p>
+<p float="left">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/sunrise.png">
+        <img src="assets/screenshots/sunrise.png" width="150" height="84">
+    </a>
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/noon.png">
+        <img src="assets/screenshots/noon.png" width="150" height="84">
+    </a>
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/day_1.png">
+        <img src="assets/screenshots/day_1.png" width="150" height="84">
+    </a>
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/day_2.png">
+        <img src="assets/screenshots/day_2.png" width="150" height="84">
+    </a>
+</p>
+<p float="left">
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/sunset.png">
+        <img src="assets/screenshots/sunset.png" width="150" height="84">
+    </a>
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/midnight.png">
+        <img src="assets/screenshots/midnight.png" width="150" height="84">
+    </a>
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/night.png">
+        <img src="assets/screenshots/night.png" width="150" height="84">
+    </a>
+    <a href="https://raw.githubusercontent.com/yooksi/daylight/readme/assets/screenshots/mining.png">
+        <img src="assets/screenshots/mining.png" width="150" height="84">
+    </a>
+</p>
 ## Installation
 
 ### Where to get it?
