@@ -103,7 +103,8 @@ Here is a list of currently available configuration options:
   guiAlignment = "TOP_LEFT"
   ```
 
--  Defines Daylight GUI offset from edge of main window screen:
+- Defines Daylight GUI offset from edge of main window screen:
+  
   ```toml
   #Format: [ <offsetX>, <offsetY> ] (i.e. [ 5, 5 ])
   guiOffset = "[ 5, 5 ]"
@@ -128,7 +129,7 @@ Replace `Tag` with the version, commit or branch you with to obtain.
 
 ### Testing
 
-- Use the `timecycle` command from [TimeLib](https://github.com/yooksi/timelib) to speed up day/night cycle.
+- Use the `timecycle` command from [TimeLib](https://github.com/yooksi/timelib) to speed up day/night cycle.  
   *See [commands](https://github.com/yooksi/timelib#commands) section of TimeLib documentation for more information.*
 
 ## License
