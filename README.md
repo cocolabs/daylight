@@ -11,8 +11,8 @@
     <a href="https://www.gnu.org/licenses/">
         <img src="https://img.shields.io/github/license/yooksi/daylight">
     </a>
-        <img src="https://img.shields.io/discord/710517912485494794">
     <a href="https://discord.gg/cerPQyS">
+        <img src="https://img.shields.io/discord/710517912485494794?color=7289DA&label=chat&logo=discord">
     </a>
 </p>
 
