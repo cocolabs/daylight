@@ -1,5 +1,10 @@
 <p align="center">
     <img src="assets/daylight_banner.gif"
+</p><br/>
+<p align="center">
+    <a href="https://discord.gg/cerPQyS">Discord Chat</a> •
+    <a href="https://github.com/yoco-labs/daylight/issues/new">Report a Bug</a> •
+    <a href="https://github.com/yoco-labs/daylight/issues?q=is:issue%20label:feature%20is:open">Planned Features</a>
 </p>
 <p align="center">
     <a href="https://jitpack.io/#yooksi/daylight">
